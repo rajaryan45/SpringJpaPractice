@@ -11,8 +11,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.TableGenerator;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /*
  * Here we could have used the getter and setter anotations for methods, but we have lombok 
@@ -27,6 +30,8 @@ import lombok.NoArgsConstructor;
 //@Table(name = "AUTHOR_TBL")
 @Data
 @NoArgsConstructor
+@AllArgsConstructor
+@Builder
 @Entity
 public class Author {
 	
@@ -46,7 +51,7 @@ public class Author {
 //			allocationSize = 1
 //			)
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	@Column(name =  "f_name" , length =  35)	
