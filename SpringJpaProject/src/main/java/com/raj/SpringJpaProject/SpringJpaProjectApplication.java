@@ -32,6 +32,7 @@ public class SpringJpaProjectApplication {
 					.createDateTime(LocalDateTime.now())
 					.build();
 			authorRepository.save(author);
+			
 		};
 	}
 }
