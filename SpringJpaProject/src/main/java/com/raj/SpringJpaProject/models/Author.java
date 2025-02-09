@@ -1,6 +1,7 @@
 package com.raj.SpringJpaProject.models;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import io.micrometer.common.lang.Nullable;
 import jakarta.persistence.Column;
@@ -8,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.TableGenerator;
@@ -72,6 +74,9 @@ public class Author {
 	
 	@Column(insertable = false)
 	private LocalDateTime updateDateTime;
+	
+	@ManyToMany(mappedBy = "authors")
+	private List<Course> courses;
 }
 
 /*
